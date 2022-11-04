@@ -1,0 +1,33 @@
+<div class="card border-primary my-3">
+  <div class="card-header">Search By Category</div>
+  <div class="card-body">
+    <div class="form-group">
+      <form (ngSubmit)="buscarNoticias()">
+        <select
+          name="categorias"
+          [(ngModel)]="categoriaSeleccionada"
+          class="form-select"
+        >
+          <option
+            *ngFor="let categoria of categorias"
+            [value]="categoria.value"
+          >
+            {{ categoria.nombre }}
+          </option>
+        </select>
+        <select
+          name="paises"
+          [(ngModel)]="paisSeleccionado"
+          class="form-select mt-2"
+        >
+          <option *ngFor="let pais of paises" [value]="pais.value">
+            {{ pais.nombre }}
+          </option>
+        </select>
+        <div class="d-grid mt-3">
+          <button class="btn btn-lg btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
